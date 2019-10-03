@@ -46,3 +46,5 @@ RXN    = receiver northing (m);
 RXZ    = receiver z (always be 0 for ground based TEM);
 
 However, the original Leroi code can model almost any EM system and survey design, therefore this main code should be downloaded and adapted to the user’s specific EM survey method. A corresponding mex file will need to be created for the users specific adapted Leroi code, our mex file can be used as a guideline for this process. 
+
+DOI 10.5281/zenodo.3471638
