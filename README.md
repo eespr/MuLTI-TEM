@@ -1,6 +1,6 @@
 # MuLTI-TEM
 
-Multimodal Layered Transdimensional Inversion of Time Domain Electromagnetic data with Depth Constraints
+Multimodal Layered Transdimensional Inversion of Transient Electromagnetic data with Depth Constraints
 
 (Can be used for all ground-based TEM survey designs, see parameter list below)
 
