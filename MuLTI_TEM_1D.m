@@ -520,6 +520,7 @@ for s=1:nsample
         nuclei_depths = nuclei_depths_prop;
         nuclei_R = nuclei_R_prop;
         like=like_prop;
+    end
         for i=1:dis
             ind=whichnuclei(nuclei_depths(1:npt+num_layers),x(i),num_layers,priors);
             hist_R(i)=nuclei_R(ind);
@@ -527,7 +528,6 @@ for s=1:nsample
         [N]=histcounts2(x,hist_R',x,y);
         R_edge=y(1:(dis-1));
         depth_edge=x(1:(dis-1));
-    end
     
            
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -575,12 +575,10 @@ for s=1:nsample
             end
         end
         
-        if accept==1 %do histergram on CI density R accepted
             CI_density = CI_density + N;
             if running_mode==1
                 forward_model_ensemble(:,(s-burn_in)) = forward_model;
             end
-        end
         
     end %if burn-in
     
