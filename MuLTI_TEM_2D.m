@@ -141,7 +141,7 @@ priors_OK2D=NaN(nsample,no_curves);
 
 parfor c = 1:no_curves
 
-    data = abs(data_2D{1,c}(:,2));% observed data, received voltage in nanoVolts
+    data = data_2D{1,c}(:,2);% observed data, received voltage in nanoVolts
     timegate = data_2D{1,c}(:,1);% define time gate centre in ms
     weighting = data.*0.05; %determine weighting to be applied in inversion in nV
     nd =numel(data); % nd is the number of data points
@@ -291,7 +291,7 @@ if priors_OK == 1
     %%%%%%%%%% computing the misfit %%%%%%%%%%%
     misfit = NaN(length(data),1);
     for i = 1:length(timegate) % time samples, this should match the time samples.
-    misfit(i,1) = abs(data(i,1) - forward_model(i,1));
+    misfit(i,1) = data(i,1) - forward_model(i,1);
     end %end misfit
 
     like = nansum( (misfit).^2 ./(2 * weighting.^2) );
@@ -493,7 +493,7 @@ for s=1:nsample
             %%%%%%%%%% computing the misfit %%%%%%%%%%%
             misfit = NaN(length(data),1);
             for i = 1:length(timegate) % time samples, this should match the time samples.
-                misfit(i,1) = abs(data(i,1) - forward_model(i,1));
+                misfit(i,1) = data(i,1) - forward_model(i,1);
             end %end multimodal misfit
 
             like_prop = nansum( (misfit).^2 ./(2 * weighting.^2) );
