@@ -54,29 +54,30 @@ DOI 10.5281/zenodo.3471638
 
 The MuLTI-TEMp algorithm was adapted from the original MuLTI TEM code. The petrophysical (p) version was created in 2021 by Siobhan Killingbeck, Department of Geography & Environmental Management, The University of Waterloo funded by the W. Garfield Weston Foundation as part of the Canadian SEARCHArtic project. 
 
-MuLTI-TEMp additionally derives salinity of subsurface fluids. It uses Archie’s mixing law and Fofonoff and Millard’s 1983 internationally recognized conductivity to salinity  conversion method, outputting salinity in terms of its practical salinity from the Practical Salinity Scale 1978, (Perkin and Lewis, 1980). Archie's law and Fofonoff and Millard’s 1983 conversion are applied to each resistivity-depth model within the ensemble of the posterior distribution to output an additional PDF of practical salinity, provided that a prior distribution of porosity can be reliably estimated, for example, from nearby borehole measurements or detailed seismic velocity analysis. A prior distribution of pressure and temperature is also required for the conductivity to salinity conversion; this can be obtained from borehole measurements or modelling, for example, using a 1D steady-state advection-diffusion model. The code is set up to use a Gaussian distribution to randomly sample each petrophysical parameter (temperature, pressure, cementation factor and porosity) from a prior mean and standard deviation, however this can be changed to a uniform or skewed distribution with depth, depending on the observed data.
-* Note the mixing law can also be easily changed if required. 
+MuLTI-TEMp additionally derives salinity of subsurface fluids. It uses Archie’s mixing law and Fofonoff and Millard’s 1983 internationally recognized conductivity to salinity  conversion method, outputting salinity in terms of its practical salinity from the Practical Salinity Scale 1978, (Perkin and Lewis, 1980). Archie's law and Fofonoff and Millard’s 1983 conversion are applied to each resistivity-depth model within the ensemble of the posterior distribution to output an additional PDF of practical salinity, provided that a prior distribution of porosity can be reliably estimated, for example, from nearby borehole measurements or detailed seismic velocity analysis. A prior distribution of pressure and temperature is also required for the conductivity to salinity conversion; this can be obtained from borehole measurements or modelling, for example, using a 1D steady-state advection-diffusion model. The code is set up to use a Gaussian distribution to randomly sample each petrophysical parameter (temperature, pressure, cementation factor and porosity) from a prior mean and standard deviation, however this can be changed to a uniform or skewed distribution with depth, depending on the observed data. Note the mixing law can also be easily changed if required. 
 
 ADDITIONAL FUNCTIONS TO BE USED WITH MuLTI-TEMp
-"salinity.m" matlab script written by Edward T Peltzer, MBARI in 2007
+
+* "salinity.m" matlab script written by Edward T Peltzer, MBARI in 2007
 
 ADDITIONAL INPUTS TO BE USED WITH MuLTI-TEMp
-porosity = estimate of porosity model from known data, if you want to calcuate pore fluid salinity.
-sigma_porosity = estimate of porosity uncertainty
-Rfluid = estimate of pore fluid resistivity model from known data e.g., borehole or lake measurements, if you want to calcuate porosity.
-sigma_Rfluid = estimate of pore fluid uncertainty
-cementation = m (cementation factor) Archie's law
-sigma_cementation = estimate of uncertainty in m
-temp = temperature degrees C
-sigma_temp = temperature uncertainty degrees C
-pressure = pressure in dbars
-sigma_pressure = uncertainty in dbars
+
+* porosity = estimate of porosity model from known data, if you want to calcuate pore fluid salinity.
+* sigma_porosity = estimate of porosity uncertainty
+* Rfluid = estimate of pore fluid resistivity model from known data e.g., borehole or lake measurements, if you want to calcuate porosity.
+* sigma_Rfluid = estimate of pore fluid uncertainty
+* cementation = m (cementation factor) Archie's law
+* sigma_cementation = estimate of uncertainty in m
+* temp = temperature degrees C
+* sigma_temp = temperature uncertainty degrees C
+* pressure = pressure in dbars
+* sigma_pressure = uncertainty in dbars
 
 MULTIPLE BASE FREQUENCIES INVERSION
-MuLTI-TEMp has also been developed to invert for multiple base frequencies. The version: MuLTI-TEMp_III is currently written to invert for THREE base frequencies. 
-In this version, the likelihood of a proposed model is calculated for all three base frequencies and only models with acceptable likelihoods for all base frequencies are added to the chain, and applied in the next iteration as the current model; if a proposed model is not accepted by all frequencies the existing model is retained as the current model.
+* MuLTI-TEMp has also been developed to invert for multiple base frequencies. The version: MuLTI-TEMp_III is currently written to invert for THREE base frequencies. In this version, the likelihood of a proposed model is calculated for all three base frequencies and only models with acceptable likelihoods for all base frequencies are added to the chain, and applied in the next iteration as the current model; if a proposed model is not accepted by all frequencies the existing model is retained as the current model.
 
 References: 
+
 Archie GE. (1952) Classification of carbonate reservoir rocks and petrophysical considerations, AAPG Bull., 36, 278–298. https://doi.org/10.1306/3D9343F7-16B1-11D7-8645000102C1865D
 Fofonoff NP and Millard RC (1983) Algorithms for the computation of fundamental properties of seawater. Paris, France, UNESCO, 53pp. (UNESCO Technical Papers in Marine Sciences; 44), http://hdl.handle.net/11329/109 
 Perkin R and Lewis E (1980). The practical salinity scale 1978: Fitting the data. IEEE Journal of Oceanic Engineering, 5(1), pp.9-16. doi.org/10.1109/JOE.1980.1145441
