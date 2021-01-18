@@ -82,3 +82,4 @@ Archie GE. (1952) Classification of carbonate reservoir rocks and petrophysical 
 Fofonoff NP and Millard RC (1983) Algorithms for the computation of fundamental properties of seawater. Paris, France, UNESCO, 53pp. (UNESCO Technical Papers in Marine Sciences; 44), http://hdl.handle.net/11329/109 
 Perkin R and Lewis E (1980). The practical salinity scale 1978: Fitting the data. IEEE Journal of Oceanic Engineering, 5(1), pp.9-16. doi.org/10.1109/JOE.1980.1145441
 
+DOI: 10.5281/zenodo.4446266
