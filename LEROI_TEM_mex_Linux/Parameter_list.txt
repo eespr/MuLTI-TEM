@@ -1,0 +1,52 @@
+Parameter list and order for the LEROI_TEM function, called in matlab
+
+NCHNL = Number of time gates (normally either 20 or 30, depending on repetition frequency)
+
+REFTYM = Time (in ms) from which TMS or TOPN & TCLS are measured. For example, 
+         this could be signal off-time or start of downward ramp.
+
+OFFTYM = time (milliseconds) between end of one pulse and the start of the next pulse (
+         of opposite sign) since a bipolar waveform is assumed (lambda/4). For systems which have a signal which is always on, OFFTIME = 0.
+
+TXON   = digitised time (in milliseconds) of each point in the waveform (set at 4 points). 
+         In most cases, TXON(1) = 0, TXON(2) = pulse on-time, TXON(3) = pulse off-time, TXON(4) = REFTYM 
+         where TXON(4) - TXON(3) = turn off time e.g., [0.0, 0.001, 1.0492, 1.05];
+
+TXAMP  = transmitter current in amps at time TXON(J), normally signal is normalised e.g., [0.0, 1.0, 1.0, 0.0];
+
+TOPN   = Start times (in ms) of receiver windows, (1x20);
+
+TCLS   = End times (in ms) of receiver windows, (1x20);
+
+SXE    = east coordinate of vertex I for loop position J (m), fixed at 4 vertices e.g., [5, -5, -5, 5];
+         Note the transmitter is fixed on the ground (Z=0) in this adapted Leroi code, 
+         for airborne data more parameters will need to be passed through the mex file to model.
+
+SXN    = north coordinate of vertex I for loop position J (m), fixed at 4 vertices e.g., [5, 5, -5, -5];
+         Note the transmitter is fixed on the ground (Z=0) in this adapted Leroi code, 
+         for airborne data more parameters will need to be passed through the mex file to model.
+
+RXE    = receiver easting (m) ;
+RXN    = receiver northing (m) ;
+RXZ    = receiver z (always be 0 for ground based TEM);
+
+Test model parameters
+
+NLYR   = number of nuclei
+
+NPLT   = fixed at 0;
+
+NLITH  = number of nuclei
+
+LYTH   = [resisitivity(1), -1, 1, 1, 0, 0, 1;
+          resisitivity(2), -1, 1, 1, 0, 0, 1;
+          resisitivity(NLYR), -1, 1, 1, 0, 0, 1];
+
+LITHL  = nuclei number e.g., if NLYR = 3 LITHL = [1, 2, 3];
+
+THK    = cell thickness (1 x (NLYR-1));
+
+Function and paramter order:
+
+LEROI_TEM(NCHNL, REFTYM, OFFTYM, TXON, TXAMP, TOPN, TCLS, SXE, SXN, RXE, RXN, RXZ, ...
+          NLYR, NPLT, NLITH, LYTH, LITHL, THK)
