@@ -62,7 +62,7 @@ weighting = data.*0.05; % determine weighting to be applied in inversion in nV
 % data2 = 7.5 Hz received voltage in nanoVolts
 timegate2 = data2(:,1:2);% define start and end times of the time gates in ms, this goes into the forward model calculation
 timegate_centre2 = data2(:,3);% define time gate centre in ms
-data2 = data2(:,4); % set observed data, received voltage in nanoVolts
+data2 = data2(:,4); % set observed data, received voltage in nanoVolts/(Amp.meter^2)
 nd2 =numel(data2); % nd is the number of data points
 weighting2 = data2.*0.075; % determine weighting to be applied in inversion in nV
 
