@@ -141,7 +141,7 @@ priors_OK2D=NaN(nsample,no_curves);
 
 parfor c = 1:no_curves
 
-    data = data_2D{1,c}(:,2);% observed data, received voltage in nanoVolts
+    data = data_2D{1,c}(:,2);% observed data, received voltage in nanoVolts/(Amp.meter^2)
     timegate = data_2D{1,c}(:,1);% define time gate centre in ms
     weighting = data.*0.05; %determine weighting to be applied in inversion in nV
     nd =numel(data); % nd is the number of data points
