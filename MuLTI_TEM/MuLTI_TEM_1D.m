@@ -27,7 +27,7 @@ close all % close all the figures
 load('input_1D_data.mat'); %load received voltages 
 timegate = data(:,1:2);% define start and end times of the time gates in ms, this goes into the forward model calculation
 timegate_centre = data(:,3);% define time gate centre in ms
-data = data(:,4); % set observed data, received voltage in nanoVolts
+data = data(:,4); % set observed data, received voltage in nanoVolts/(Amp.meter^2)
 nd =numel(data); % nd is the number of data points
 
 %determine weighting to be applied in inversion in nV
