@@ -22,19 +22,19 @@ IMPORTANT NOTE ABOUT THE FORWARD MODELLING CODE:
 
 In MuLTI-TEM, the Leroi code has been adapted, from its original code, for ground-based TEM survey designs only.  The TEM survey parameters are defined in MuLTI-TEM as follows (we try to keep each parameter name the same as the original in Leroi where possible):
 
-NCHNL = Number of time gates (normally either 20 or 30, depending on repetition frequency)
+NCHNL = Number of time gates (For the ProTEM system this is either 20 or 30, depending on repetition frequency)
 
-REFTYM = Time (in ms) from which TMS or TOPN & TCLS are measured. For example, this could be signal off-time or start of downward ramp.
+REFTYM = Time (in ms) from which TMS or TOPN & TCLS are measured. For example, this could be signal off-time or start of downward ramp. If using the ProTEM system gate times are relative to the end of the turnoff ramp. 
 
-OFFTYM = time (milliseconds) between end of one pulse and the start of the next pulse (of opposite sign) since a bipolar waveform is assumed (lambda/4). For systems which have a signal which is always on, OFFTIME = 0.
+OFFTYM = time (milliseconds) between end of one pulse and the start of the next pulse (of opposite sign) since a bipolar waveform is assumed. For systems which have a signal which is always on, OFFTIME = 0.
 
-TXON   = digitised time (in milliseconds) of each point in the waveform (set at 4 points). In most cases, TXON(1) = 0, TXON(2) = pulse on-time, TXON(3) = pulse off-time, TXON(4) = REFTYM where TXON(4) - TXON(3) = turn off time e.g., [0.0, 0.001, 1.0492, 1.05];
+TXON   = digitised time (in milliseconds) of each point in the waveform (set at 4 points). In most cases, TXON(1) = 0, TXON(2) = pulse on-time (for example the ProTEM system pluse on time is 1 ms), TXON(3) = pulse off-time, TXON(4) = REFTYM where TXON(4) - TXON(3) = turn off time e.g., [0.0, 0.001, 1.0492, 1.05];
 
 TXAMP  = transmitter current in amps at time TXON(J), normally signal is normalised e.g., [0.0, 1.0, 1.0, 0.0];
 
-TOPN   = Start times (in ms) of receiver windows, (1x20);
+TOPN   = Start times (in ms) of receiver windows, (1xNCHNL);
 
-TCLS   = End times (in ms) of receiver windows, (1x20);
+TCLS   = End times (in ms) of receiver windows, (1xNCHNL);
 
 SXE    = east coordinate of vertex I for loop position J (m), fixed at 4 vertices e.g., [5, -5, -5, 5]; Note the transmitter is fixed on the ground (Z=0) in this adapted Leroi code, for airborne data more parameters will need to be passed through the mex file to model.
 
