@@ -4,7 +4,7 @@ Multimodal Layered Transdimensional Inversion of Transient Electromagnetic data 
 
 (Can be used for all ground-based TEM survey designs, see parameter list below)
 
-The MuLTI-TEM algorithm was writted by Siobhan Killingbeck and Phil Livermore in 2019, School of Earth and Environemnt, The University of Leeds. It is based on Matlab code written by Thomas Bodin. MuLTI-TEM was developed in Matlab version 2017a, therefore all Matlab codes supplied will work with this version or subsequent Matlab versions. This code can be run on Linux or Windows based platforms. This github repository includes: 
+The MuLTI-TEM algorithm was written by Siobhan Killingbeck and Phil Livermore in 2019, School of Earth and Environemnt, The University of Leeds. It is based on Matlab code written by Thomas Bodin. MuLTI-TEM was developed in Matlab version 2017a, therefore all Matlab codes supplied will work with this version or subsequent Matlab versions. This code can be run on Linux or Windows based platforms. This github repository includes: 
 
 1. 1D and 2D MuLTI-TEM Matlab scripts 
 2. Two matlab functions called in the main scripts, “thicknesses_and_priors” and “whichnuclei”,
